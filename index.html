@@ -9,14 +9,15 @@
 		var repeat = true;
 		var randomNumber;
 		var imgName;
+		var imgCount = 515;
 		function randomImg() {
 			repeat = true;
 			while (repeat == true) {
-				if (array.length >= 10) {
+				if (array.length >= imgCount) {
 				alert('All photos are generated, please reset');
 				break;
 			}
-				randomNumber = Math.floor(Math.random() * 10) + 1;
+				randomNumber = Math.floor(Math.random() * imgCount) + 1;
 				imgName = "img" + randomNumber + ".png";
 				if (array.indexOf(imgName) === -1) {
 					repeat = false;
