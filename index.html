@@ -9,14 +9,14 @@ document.getElementById("dl").href = document.getElementById("imageId").src;
 }
  
 function downloadImg(){
-if (document.getElementById("dl").href == ""){
+if (document.getElementById("dl").href == null){
 alert('Generate image before download ah! 7 head!');
 } 
 }
 
 function reset(){
-document.getElementById("imageId").src = "";
-document.getElementById("dl").href = "";
+document.getElementById("imageId").src = null;
+document.getElementById("dl").href = null;
 }
 </script>
 <body>
