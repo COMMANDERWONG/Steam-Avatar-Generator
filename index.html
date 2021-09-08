@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h1>Steam Value Adder</h1>
+
+<img id="imageId" width="500" height="500"> <br>
+<button type="button" onclick="randomImg()">Generate Random Image</button>
+<button type="reset" onclick="reset()">Reset</button>
+<a id='dl' href="" download>
+<button type="button" onclick="downloadImg()">Download Image</button>
+</a>
+</body>
+<script>
+function randomImg(){
+var randomNumber = Math.floor(Math.random() * 10)+1;
+var imgName = "img" + randomNumber + ".png";
+document.getElementById("imageId").src = "photos/" +imgName;
+document.getElementById("dl").href = document.getElementById("imageId").src;
+}
+ 
+function downloadImg(){
+var link = document.getElementById("imageId").src;
+if (link == ""){
+alert('Generate image before download ah! 7 head!');
+} 
+}
+
+function reset(){
+document.getElementById("imageId").src = "";
+document.getElementById("dl").href = "";
+}
+</script>
+</html>
