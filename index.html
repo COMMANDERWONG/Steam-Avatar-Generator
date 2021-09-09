@@ -32,9 +32,9 @@
 
 		function downloadImg() {
 			var link = document.getElementById("imageId").src;
-			if (link == "") {
-				alert('Generate image before download ah! 7 head!');
-			}
+			if(File.Exists(link)){
+			alert('Generate image before download ah! 7 head!');
+			}			
 		}
 
 		function reset() {
