@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+	<h1>Steam Avatar Generator</h1>
+	<script>
+		var array = new Array();
+		var repeat = true;
+		var randomNumber;
+		var imgName;
+		var imgCount = 520;
+		function randomImg() {
+			repeat = true;
+			while (repeat == true) {
+				if (array.length >= imgCount) {
+				alert('All photos are generated, please reset');
+				break;
+			}
+				randomNumber = Math.floor(Math.random() * imgCount) + 1;
+				imgName = "img" + randomNumber + ".png";
+				if (array.indexOf(imgName) === -1) {
+					repeat = false;
+				} 
+
+			}
+			array.push(imgName);
+			document.getElementById("imageId").src = "photos/" + imgName;
+			document.getElementById("dl").href = document.getElementById("imageId").src;
+			
+		}
+
+		function downloadImg() {
+			var link = document.getElementById("imageId").src;
+			if (link == "") {
+				alert('Generate image before download ah! 7 head!');
+				randomImg();
+				alert('Diu! I generate one for you la!');
+			}
+		}
+
+		function reset() {
+			location.reload(true);
+		}
+	</script>
+	<img id="imageId" width="500" height="500"> <br>
+	<button type="button" onclick="randomImg()">Generate Random Image</button>
+	<button type="reset" onclick="reset()">Reset</button>
+	<a id='dl' download>
+		<button type="button" onclick="downloadImg()">Download Image</button>
+	</a><br>
+	No duplicate image will be generated until reset.
+</body>
+
+</html>
